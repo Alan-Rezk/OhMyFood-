@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="SASS/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap" rel="stylesheet">
@@ -12,21 +12,18 @@
     <title>OhMyFood!</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <!--Logo et localisation-->
-            <div><img src="assets/images/logo/ohmyfood.png" alt="Logo OhMyFood"></div>
-            <div>
-                <span><i class="fa-solid fa-location-dot"></i></span>
-                <p>Paris, Belleville</p>
-            </div>
-            <!--recherche restaurants-->
-            <div>
-                <h3>Réservez le menu qui vous convient</h3>
-                <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-                <button>Explorez nos restaurants</button>
-            </div>
-        </nav>
+    <header class="header">
+        <h1 class="header__logo">OhMyFood</h1>
+        <!--Logo et localisation-->
+        <div>
+            <p><span><i class="fa-solid fa-location-dot"></i></span>Paris, Belleville</p>
+        </div>
+        <!--recherche restaurants-->
+        <div>
+            <h3>Réservez le menu qui vous convient</h3>
+            <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+            <button>Explorez nos restaurants</button>
+        </div>
     </header>
 
     <main>

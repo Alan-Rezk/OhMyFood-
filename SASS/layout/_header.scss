@@ -1,0 +1,15 @@
+// bloc BEM header
+.header {
+    background: $colour-white;
+    height: 63px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    &__logo{
+        font-family: 'Shrikhand';
+        font-style: italic;
+        font-size: 30px;
+        font-weight: 700;
+        color: $colour-black;
+    }
+}
