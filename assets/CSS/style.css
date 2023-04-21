@@ -1,0 +1,622 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+* a {
+    text-decoration: none;
+    color: white;
+}
+
+* img {
+    width: 100%;
+}
+
+:root {
+    --background: #f7f7f7;
+    --primary: #9356DC;
+    --primary-2: #F5EDFF;
+    --secondary: #FCA311;
+    --green: #99E2D0;
+    --green-font: #008766;
+    --white: #fff;
+    --black: #101010;
+    --grey: #353535;
+    --grey-tint4: #7E7E7E;
+}
+
+/*Loader*/
+
+.loader-container {
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-in-out;
+}
+
+.dot {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    margin: 0 15px;
+    animation: loader infinite 0.3s alternate;
+}
+
+.d2 {
+    animation-delay: 0.05s;
+}
+
+.d3 { 
+    animation-delay: 0.1s;
+}
+
+@keyframes loader {
+    100% {
+        transform: translateY(-30px);
+    }
+}
+/*************************/
+body {
+    max-width: 767.99px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.location {
+    display: flex;
+    justify-content: center;
+    column-gap: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #EAEAEA;
+}
+
+.reservation {
+    background-color: #F3F3F3;
+    text-align: center;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    line-height: 30px;
+}
+
+.reservation-container h2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    padding-bottom: 30px;
+}
+
+.reservation-container p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 30px;
+}
+
+.reservation-btn {
+    border-width: 0;
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    color: #fff;
+    font-weight: 500;
+    font-style: normal;
+    padding: 15px;
+    margin-top: 2%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.reservation-btn:hover {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)),
+     linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.process {
+    background-color: #FFFFFF;
+    padding-left: 7%;
+    padding-right: 5%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.process-title {
+    padding-bottom: 5%;
+}
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.process-step {
+    display: flex;
+    align-items: center;
+    background-color: #F6F6F6;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    position: relative;
+    width: 100%;
+    height: 73px;
+}
+
+.process-step .process-number {
+    background-color: #9356DC;
+    color: #FFFFFF;
+    height: 25px;
+    width: 25px;
+    border-radius: 25px;
+    position: absolute;
+    left: -15px;
+    padding-left: 8px;
+    padding-top: 3px;
+}
+
+.process-icon {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.process-step:hover .process-icon {
+    color: #9356DC;
+}
+
+.process-step:hover {
+box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.restaurants {
+    background-color: #F3F3F3;
+    padding: 5% 5%;
+}
+
+.restaurants-title {
+    padding-bottom: 20px;
+}
+
+.restaurants-grid {
+    display: grid;
+    row-gap: 20px;
+}
+
+.card-home {
+    display: flex;
+    flex-direction: column;
+    color: #101010;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    border-radius: 15px;
+    position: relative;
+}
+
+.card-home .menu-new {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    width: 80px;
+    height: 29px;
+    color: #008766;
+    background-color: #99E2D0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+}
+
+.menu-new p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    padding-left: 13px;
+    padding-top: 7px;
+}
+.card-home img {
+    object-fit: cover;
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    height: 200px;
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    padding: 15px;
+    border-radius: 0px 0px 15px 15px;
+}
+.card-home:hover {
+box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.card-txt-main {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/*****Pages******/
+
+/*header*/
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title h1 {
+    font-family: 'Shrikhand';
+    font-weight: 400;
+}
+
+.arrow {
+    color: black;
+    left: 50px;
+    position: absolute;
+    top: 45px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-title h2 {
+    font-family: 'Shrikhand';
+    font-weight: 400;
+}
+
+.menu-content {
+    margin-top: -25px;
+    border-radius: 25px 25px 0px 0px;
+    background-color: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    gap: 20px;
+}
+
+.menu-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*mise en place animation coeur*/
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.heart-off {
+    cursor: pointer;
+    position: relative;
+}
+
+.heart-on {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    background-image: -o-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    -webkit-transition: 0.4s ease-in-out;
+    -0-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+}
+
+.heart-off:hover {
+    opacity: 0;
+}
+
+.heart-on:hover {
+    opacity: 1;
+}
+
+.menu-enter {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+.menu-dishes {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+.menu-dessert {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+.card-title {
+    border-bottom: 3px solid #99E2D0;
+    width: 7%;
+}
+
+/*attention modification des cartes pour l'animation valide*/
+.card {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    display: flex;
+    grid-template-columns: 2fr 1fr;
+    overflow: hidden;
+}
+
+.card-txt {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 20px;
+    flex: 1;
+}
+
+.card .valide {
+    background-color: #99E2D0;
+    border-radius: 0px 15px 15px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    margin-right: -65px;
+    padding: 0 0.9375rem;
+    transition: margin-right 0.4s ease-in-out;
+}
+
+.card:hover .valide {
+    margin-right: 0;
+}
+
+.card:focus .valide {
+    margin-right: 0;
+}
+
+.check {
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    color: #008766;
+    padding: 5px;
+}
+
+.command-icon {
+    display: flex;
+    justify-content: center;
+}
+
+.command-title {
+    border-width: 0;
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    border-radius: 25px;
+    color: #fff;
+    font-weight: 500;
+    font-style: normal;
+    height: 50px;
+    width: 186px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+
+.command-title:hover {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)),
+     linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.footer {
+    background-color: #353535;
+    color: #fff;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-title {
+    font-family: 'Shrikhand';
+    font-weight: 400;
+    font-size: medium;
+    padding-bottom: 5%;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.inline li {
+    padding-bottom: 10px;
+}
+
+/****** Media queries ***********/
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (min-width: 768px) {
+    body {
+        max-width: 1024px;
+    }
+    .reservation-container h2 {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        padding-bottom: 30px;
+    }
+    
+    .reservation-container p {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    .process {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .restaurants {
+        padding: 5% 10%;
+    }
+
+    .restaurants-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 31px;    }
+
+        .process-step .process-number {
+            left: -1%;
+        }
+
+        .card-title {
+            width: 6%;
+        }
+/*********modif taille tablette**********/
+        .menu {
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .menu-content {
+            padding-left: 210px;
+            padding-right: 210px;
+        }
+/************************/
+
+/*test texte en 3points*/
+
+.ellipsis p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+
+/*****************************/
+}
+
+/* Large devices (Desktop, less than 1440px) */
+@media (min-width: 1024px) {
+    body {
+        max-width: initial;
+    }
+
+    .reservation-container h2 {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        padding-bottom: 30px;
+    }
+    
+    .reservation-container p {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    .process {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .restaurants {
+        padding: 5% 10%;
+    }
+
+    .restaurants-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 31px;
+    }
+
+        .process-steps {
+            display: flex;
+            flex-direction: row;
+            column-gap: 30px;
+        }
+
+        .process-step .process-number {
+            left: -10px;
+        }
+
+        .menu {
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .menu-content {
+            padding-left: 210px;
+            padding-right: 210px;
+        }
+
+        main img {
+            height: 400px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .menu-title {
+            justify-content: center;
+        }
+
+        .menu-title .card-icon {
+            padding-left: 20px;
+        }
+
+        .card-title {
+            width: 3%;
+        }
+
+        .footer {
+            flex-direction: row-reverse;
+            padding-top: 57px;
+            padding-bottom: 0px;
+        }
+
+        .footer-title {
+            padding-left: 50px;
+        }
+
+        .inline li {
+            display: inline;
+            padding-left: 20px;
+        }
+}

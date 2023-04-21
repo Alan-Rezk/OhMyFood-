@@ -1,1 +1,14 @@
-/*# sourceMappingURL=main.css.map */
+.header {
+  background: #fff;
+  height: 63px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.header__logo {
+  font-family: "Shrikhand";
+  font-style: italic;
+  font-size: 30px;
+  font-weight: 700;
+  color: #101010;
+}/*# sourceMappingURL=main.css.map */
