@@ -1,10 +1,10 @@
-*,
-::before,
-::after {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
+
 * a {
     text-decoration: none;
     color: white;
@@ -30,14 +30,28 @@
 /*Loader*/
 
 .loader-container {
-    position: absolute;
+    position: fixed;
     background-color: #f1f1f1;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: opacity 1s ease-in-out;
+    animation: loader 3s linear;
+    animation-fill-mode: both;
+    z-index: 1000;
+}
+
+@keyframes loader {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 .dot {
@@ -46,26 +60,31 @@
     border-radius: 50%;
     background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
     margin: 0 15px;
-    animation: loader infinite 0.3s alternate;
+    animation: loaderDot 0.3s linear infinite;
 }
 
 .d2 {
     animation-delay: 0.05s;
 }
 
-.d3 { 
+.d3 {
     animation-delay: 0.1s;
 }
 
-@keyframes loader {
+@keyframes loaderDot {
+    0% {
+        transform: translateY(-5px);
+    }
+
     100% {
         transform: translateY(-30px);
     }
 }
+
 /*************************/
-body {
+
+.animation body {
     max-width: 767.99px;
-    font-family: 'Roboto', sans-serif;
 }
 
 .header {
@@ -133,7 +152,7 @@ body {
 
 .reservation-btn:hover {
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)),
-     linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+        linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 }
 
@@ -148,6 +167,7 @@ body {
 .process-title {
     padding-bottom: 5%;
 }
+
 .process-steps {
     display: flex;
     flex-direction: column;
@@ -187,7 +207,7 @@ body {
 }
 
 .process-step:hover {
-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 }
 
 .restaurants {
@@ -234,6 +254,7 @@ box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
     padding-left: 13px;
     padding-top: 7px;
 }
+
 .card-home img {
     object-fit: cover;
     border-radius: 15px 15px 0px 0px;
@@ -248,8 +269,9 @@ box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
     padding: 15px;
     border-radius: 0px 0px 15px 15px;
 }
+
 .card-home:hover {
-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 }
 
 .card-txt-main {
@@ -279,6 +301,11 @@ box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
     left: 50px;
     position: absolute;
     top: 45px;
+}
+
+main img {
+    height: 250px;
+    object-fit: cover;
 }
 
 .menu {
@@ -325,12 +352,13 @@ box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
     cursor: pointer;
     opacity: 0;
     position: absolute;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
     background-image: -o-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
     -webkit-transition: 0.4s ease-in-out;
-    -0-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
     transition: 0.4s ease-in-out;
 }
 
@@ -374,6 +402,54 @@ box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
     display: flex;
     grid-template-columns: 2fr 1fr;
     overflow: hidden;
+    animation: Menu-anime 2s ease 0s 1 normal forwards;
+}
+
+@keyframes Menu-anime {
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 1;
+        transform: translateX(-48px);
+    }
+
+    24% {
+        opacity: 1;
+    }
+
+    40% {
+        animation-timing-function: ease-in;
+        transform: translateX(-26px);
+    }
+
+    65% {
+        animation-timing-function: ease-in;
+        transform: translateX(-13px);
+    }
+
+    82% {
+        animation-timing-function: ease-in;
+        transform: translateX(-6.5px);
+    }
+
+    93% {
+        animation-timing-function: ease-in;
+        transform: translateX(-4px);
+    }
+
+    25%,
+    55%,
+    75%,
+    87%,
+    98% {
+        animation-timing-function: ease-out;
+        transform: translateX(0px);
+    }
+
+    100% {
+        animation-timing-function: ease-out;
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
 
 .card-txt {
@@ -411,6 +487,18 @@ box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
     padding: 5px;
 }
 
+
+
+.card-txt,
+.ellipsis,
+.ellipsis h3,
+.ellipsis p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
 .command-icon {
     display: flex;
     justify-content: center;
@@ -435,7 +523,7 @@ box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 
 .command-title:hover {
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)),
-     linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+        linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 }
 
@@ -465,76 +553,13 @@ box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
+
+/*mettre une taille height à l'image*/
+
 @media (min-width: 768px) {
     body {
         max-width: 1024px;
     }
-    .reservation-container h2 {
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 40px;
-        padding-bottom: 30px;
-    }
-    
-    .reservation-container p {
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 300;
-        font-size: 18px;
-        line-height: 21px;
-    }
-
-    .process {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-
-    .restaurants {
-        padding: 5% 10%;
-    }
-
-    .restaurants-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 31px;    }
-
-        .process-step .process-number {
-            left: -1%;
-        }
-
-        .card-title {
-            width: 6%;
-        }
-/*********modif taille tablette**********/
-        .menu {
-            margin-left: 10%;
-            margin-right: 10%;
-        }
-
-        .menu-content {
-            padding-left: 210px;
-            padding-right: 210px;
-        }
-/************************/
-
-/*test texte en 3points*/
-
-.ellipsis p {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    
-}
-
-/*****************************/
-}
-
-/* Large devices (Desktop, less than 1440px) */
-@media (min-width: 1024px) {
-    body {
-        max-width: initial;
-    }
 
     .reservation-container h2 {
         font-family: 'Roboto';
@@ -543,7 +568,7 @@ box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
         font-size: 40px;
         padding-bottom: 30px;
     }
-    
+
     .reservation-container p {
         font-family: 'Roboto';
         font-style: normal;
@@ -567,56 +592,127 @@ box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
         gap: 31px;
     }
 
-        .process-steps {
-            display: flex;
-            flex-direction: row;
-            column-gap: 30px;
-        }
+    .process-step .process-number {
+        left: -1%;
+    }
 
-        .process-step .process-number {
-            left: -10px;
-        }
+    .card-title {
+        width: 6%;
+    }
 
-        .menu {
-            margin-left: 10%;
-            margin-right: 10%;
-        }
+    /*********modif taille tablette**********/
+    .menu {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 
-        .menu-content {
-            padding-left: 210px;
-            padding-right: 210px;
-        }
+    .menu-content {
+        padding-left: 210px;
+        padding-right: 210px;
+    }
 
-        main img {
-            height: 400px;
-            width: 100%;
-            object-fit: cover;
-        }
+    /************************/
 
-        .menu-title {
-            justify-content: center;
-        }
+    /*test texte en 3points*/
 
-        .menu-title .card-icon {
-            padding-left: 20px;
-        }
+    .ellipsis h3,
+    p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
 
-        .card-title {
-            width: 3%;
-        }
+    }
 
-        .footer {
-            flex-direction: row-reverse;
-            padding-top: 57px;
-            padding-bottom: 0px;
-        }
+    /*****************************/
+}
 
-        .footer-title {
-            padding-left: 50px;
-        }
+/* Large devices (Desktop, less than 1440px) */
+@media (min-width: 1024px) {
+    body {
+        max-width: initial;
+    }
 
-        .inline li {
-            display: inline;
-            padding-left: 20px;
-        }
+    .reservation-container h2 {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        padding-bottom: 30px;
+    }
+
+    .reservation-container p {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    .process {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .restaurants {
+        padding: 5% 10%;
+    }
+
+    .restaurants-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 31px;
+    }
+
+    .process-steps {
+        display: flex;
+        flex-direction: row;
+        column-gap: 30px;
+    }
+
+    .process-step .process-number {
+        left: -10px;
+    }
+
+    .menu {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .menu-content {
+        padding-left: 210px;
+        padding-right: 210px;
+    }
+
+    main img {
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .menu-title {
+        justify-content: center;
+    }
+
+    .menu-title .card-icon {
+        padding-left: 20px;
+    }
+
+    .card-title {
+        width: 3%;
+    }
+
+    .footer {
+        flex-direction: row-reverse;
+        padding-top: 57px;
+        padding-bottom: 0px;
+    }
+
+    .footer-title {
+        padding-left: 50px;
+    }
+
+    .inline li {
+        display: inline;
+        padding-left: 20px;
+    }
 }
