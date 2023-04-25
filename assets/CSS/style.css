@@ -27,7 +27,7 @@
     --grey-tint4: #7E7E7E;
 }
 
-/*Loader*/
+/**********Loader**************/
 
 .loader-container {
     position: fixed;
@@ -83,7 +83,7 @@
 
 /*************************/
 
-.animation body {
+body {
     max-width: 767.99px;
 }
 
@@ -99,7 +99,7 @@
 .location {
     display: flex;
     justify-content: center;
-    column-gap: 3%;
+    column-gap: 2%;
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 25px;
@@ -118,7 +118,6 @@
 }
 
 .reservation-container h2 {
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -126,7 +125,6 @@
 }
 
 .reservation-container p {
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
@@ -143,8 +141,6 @@
     font-weight: 500;
     font-style: normal;
     padding: 15px;
-    margin-top: 2%;
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -280,11 +276,9 @@
     flex-direction: column;
 }
 
+/**************Pages*********************/
 
-
-/*****Pages******/
-
-/*header*/
+/******header********/
 
 .header {
     display: flex;
@@ -335,7 +329,7 @@ main img {
     justify-content: space-between;
 }
 
-/*mise en place animation coeur*/
+/****animation coeur****/
 
 .card-icon {
     display: flex;
@@ -356,6 +350,7 @@ main img {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    background-image: -o-linear-gradient(256.67deg, #9356DC -11.44%, #FF79DA 123.93%);
     background-image: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
     background-image: -o-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
     -webkit-transition: 0.4s ease-in-out;
@@ -370,6 +365,8 @@ main img {
 .heart-on:hover {
     opacity: 1;
 }
+
+/*****************/
 
 .menu-enter {
     display: flex;
@@ -391,10 +388,9 @@ main img {
 
 .card-title {
     border-bottom: 3px solid #99E2D0;
-    width: 7%;
+    width: 50px;
 }
 
-/*attention modification des cartes pour l'animation valide*/
 .card {
     background-color: #FFFFFF;
     border-radius: 15px;
@@ -405,6 +401,8 @@ main img {
     overflow: hidden;
     opacity: 0;
 }
+
+/****animation carte menu*****/
 
 .card-animation1 {
     animation: Menu-anime 2s ease 0s 1 normal forwards;
@@ -470,7 +468,6 @@ main img {
     }
 }
 
-
 .card-txt {
     display: flex;
     align-items: end;
@@ -495,16 +492,14 @@ main img {
     margin-right: 0;
 }
 
-.card:focus .valide {
-    margin-right: 0;
-}
-
 .check {
     background-color: #FFFFFF;
     border-radius: 25px;
     color: #008766;
     padding: 5px;
 }
+
+/****mise en place ellipsise****/
 
 .card-txt,
 .ellipsis,
@@ -515,6 +510,8 @@ main img {
     text-overflow: ellipsis;
 
 }
+
+/********/
 
 .command-icon {
     display: flex;
@@ -543,6 +540,8 @@ main img {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 }
 
+/*****footer*****/
+
 .footer {
     background-color: #353535;
     color: #fff;
@@ -555,7 +554,7 @@ main img {
     font-family: 'Shrikhand';
     font-weight: 400;
     font-size: medium;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
 }
 
 .footer ul {
@@ -570,15 +569,12 @@ main img {
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 
-/*mettre une taille height à l'image*/
-
 @media (min-width: 768px) {
     body {
         max-width: 1024px;
     }
 
     .reservation-container h2 {
-        font-family: 'Roboto';
         font-style: normal;
         font-weight: 700;
         font-size: 40px;
@@ -586,7 +582,6 @@ main img {
     }
 
     .reservation-container p {
-        font-family: 'Roboto';
         font-style: normal;
         font-weight: 300;
         font-size: 18px;
@@ -612,25 +607,40 @@ main img {
         left: -1%;
     }
 
-    .card-title {
-        width: 6%;
-    }
-
-    /*********modif taille tablette**********/
     .menu {
         margin-left: 10%;
         margin-right: 10%;
     }
+
+    .footer {
+        flex-direction: row-reverse;
+        padding-top: 57px;
+        padding-bottom: 0px;
+    }
+
+    .footer-title {
+        padding-left: 50px;
+        padding-bottom: 50px;
+    }
+
+    .inline li {
+        display: inline;
+        padding-left: 10px;
+    }
 }
 
-/* Large devices (Desktop, less than 1440px) */
+/***** Large devices (Desktop, less than 1440px) ******/
+
 @media (min-width: 1024px) {
     body {
         max-width: initial;
     }
 
+    .location {
+        column-gap: 1%;
+    }
+
     .reservation-container h2 {
-        font-family: 'Roboto';
         font-style: normal;
         font-weight: 700;
         font-size: 40px;
@@ -638,7 +648,6 @@ main img {
     }
 
     .reservation-container p {
-        font-family: 'Roboto';
         font-style: normal;
         font-weight: 300;
         font-size: 18px;
@@ -682,8 +691,6 @@ main img {
 
     main img {
         height: 400px;
-        width: 100%;
-        object-fit: cover;
     }
 
     .menu-title {
@@ -694,9 +701,6 @@ main img {
         padding-left: 20px;
     }
 
-    .card-title {
-        width: 3%;
-    }
 
     .footer {
         flex-direction: row-reverse;
@@ -706,6 +710,7 @@ main img {
 
     .footer-title {
         padding-left: 50px;
+        padding-bottom: 50px;
     }
 
     .inline li {
