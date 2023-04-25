@@ -348,6 +348,7 @@ main img {
     opacity: 0;
     position: absolute;
     background-clip: text;
+    -moz-text-fill-color: transparent;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-image: -o-linear-gradient(256.67deg, #9356DC -11.44%, #FF79DA 123.93%);
